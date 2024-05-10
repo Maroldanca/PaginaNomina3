@@ -27,11 +27,12 @@ function calcularLiquidacion() {
   
     // Mostramos los resultados con una precisión de un decimal
     document.getElementById('resultado').innerHTML = `
-      <p>Cesantías: $${cesantias.toFixed(1)}</p>
-      <p>Intereses de Cesantías: $${interesesCesantias.toFixed(1)}</p>
-      <p>Prima: $${prima.toFixed(1)}</p>
-      <p>Días de Vacaciones: ${diasVacaciones}</p>
-      <p>Total de Liquidación: $${total.toFixed(1)}</p>
+      <p>Cesantías: $${cesantias.toLocaleString('en')}</p>
+      <p>Intereses de Cesantías: $${interesesCesantias.toLocaleString('en')}</p>
+      <p>Prima: $${prima.toLocaleString('en')}</p>
+      <p>Días de Vacaciones: ${diasVacaciones.toLocaleString('en')}</p>
+      <p>Total de Liquidación: $${total.toLocaleString('en')}</p>
     `;
+
   }
   

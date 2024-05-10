@@ -3,16 +3,18 @@ body {
     background-color: #f4f4f4;
     margin: 0;
     padding: 0;
+    background: rgb(255,9,141);
+    background: linear-gradient(29deg, rgba(255,9,141,1) 25%, rgba(255,255,255,1) 100%);
   }
   
-  .container {
+  /* .container {
     max-width: 500px;
     margin: 50px auto;
     padding: 20px;
     background-color: #fff;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
+  } */
   
   .input-group {
     margin-bottom: 20px;
@@ -46,6 +48,7 @@ body {
   #resultado {
     margin-top: 20px;
     font-weight: bold;
+    text-align: start;
   }
   
   
