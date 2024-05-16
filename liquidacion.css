@@ -5,7 +5,18 @@ body {
     padding: 0;
     background: rgb(255,9,141);
     background: linear-gradient(29deg, rgba(255,9,141,1) 25%, rgba(255,255,255,1) 100%);
+    
   }
+
+  .container {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: transparent; /* Hacemos que el fondo sea transparente */
+    border: none; /* Eliminamos el borde */
+    box-shadow: none; /* Eliminamos la sombra */
+}
+
   
   /* .container {
     max-width: 500px;
