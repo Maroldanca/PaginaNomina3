@@ -21,11 +21,13 @@ function calcularLiquidacion() {
     // const prima = ((salario + auxilioTransporte) / 30) * diferenciaDias;
   
     // Calculamos los días de vacaciones (asumiendo 1.25 días por mes trabajado)
-    const diasPorMesVacaciones = 1;
-    const diasVacaciones = Math.floor(diferenciaDias / 30) * diasPorMesVacaciones;
+
+    // const diasPorMesVacaciones = 1;
+    const diasVacaciones = (salario * diferenciaDias )/720;
+    // const diasVacaciones = Math.floor(diferenciaDias / 30) * diasPorMesVacaciones;
   
     // Calculamos el total de la liquidación
-    const total = salario + cesantias + interesesCesantias + prima + auxilioTransporte;
+    const total = cesantias + interesesCesantias + prima + diasVacaciones;
   
     // Mostramos los resultados con una precisión de un decimal
     document.getElementById('resultado').innerHTML = `
