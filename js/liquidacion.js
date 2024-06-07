@@ -9,14 +9,16 @@ function calcularLiquidacion() {
   
 
     // Calculamos las cesantías como el salario mensual por los días trabajados
-    const cesantias = ((salario+auxilioTransporte) *diferenciaDias )/360;
+    const cesantias = ((salario+auxilioTransporte) * diferenciaDias )/360;
 
   
     // Calculamos los intereses de las cesantías al 12% anual
     const interesesCesantias = (cesantias * diferenciaDias * 0.12 )/ 360;
   
     // Calculamos la prima como el salario mensual por los días trabajados
-    const prima = (salario / 30) * diferenciaDias;
+
+    const prima = ((salario+auxilioTransporte) * diferenciaDias )/360;
+    // const prima = ((salario + auxilioTransporte) / 30) * diferenciaDias;
   
     // Calculamos los días de vacaciones (asumiendo 1.25 días por mes trabajado)
     const diasPorMesVacaciones = 1;
