@@ -98,9 +98,18 @@ document.addEventListener("DOMContentLoaded", function () {
     pSignUp.classList.add("mb-0");
 
     var aSignUp = document.createElement("a");
-    aSignUp.href = "#";
+    aSignUp.href = "registrateEmpleador.html";
     aSignUp.classList.add("text-white-50", "fw-bold");
     aSignUp.textContent = "¿No tienes una cuenta? Regístrate";
+
+    // Crear el enlace para volver a la página principal con el icono de flecha
+    var backButton = document.createElement("a");
+    backButton.href = "index.html"; // Cambia "index.html" por la URL de tu página principal
+    backButton.classList.add("btn", "btn-outline-light", "position-absolute", "top-0", "start-0", "m-3");
+    backButton.innerHTML = '<i class="fas fa-arrow-left"></i>'; // Icono de flecha de Font Awesome
+
+    // Agregar el enlace al cuerpo de la tarjeta
+    divCardBody.appendChild(backButton);
 
     pSignUp.appendChild(aSignUp);
     divSignUp.appendChild(pSignUp);

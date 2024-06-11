@@ -1,8 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     var bodyElement = document.body;
 
-    
-
     // Crear la sección principal
     var section = document.createElement("section");
     section.classList.add("vh-100", "gradient-custom");
@@ -17,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Crear la columna
     var divCol = document.createElement("div");
-    divCol.classList.add("col-md-6");
+    divCol.classList.add("col-md-4"); // Ajustar el tamaño de la columna a col-md-4
 
     // Crear la tarjeta
     var divCard = document.createElement("div");
@@ -26,30 +24,42 @@ document.addEventListener("DOMContentLoaded", function () {
     // Crear el cuerpo de la tarjeta
     var divCardBody = document.createElement("div");
     divCardBody.classList.add("card-body", "p-4", "text-center");
-    divCardBody.style.paddingTop = "100px";
-    divCardBody.style.paddingBottom = "100px";
+    divCardBody.style.paddingTop = "50px"; // Ajustar el padding superior
+    divCardBody.style.paddingBottom = "50px"; // Ajustar el padding inferior
 
-    // Crear el título "Iniciar Sesión"
+    // Crear el título "Registro"
     var h2 = document.createElement("h2");
     h2.classList.add("fw-bold", "mb-3", "text-uppercase");
-    h2.textContent = "Iniciar Sesión";
+    h2.textContent = "Registro";
 
-    // Crear el subtítulo "Empleado"
+    // Crear el subtítulo "Usuario"
     var h3 = document.createElement("h3");
     h3.classList.add("fw-bold", "mb-3", "text-uppercase", "text-white-50");
-    h3.textContent = "Empleado";
+    h3.textContent = "EMPLEADOR";
 
     // Crear la imagen del logo
     var imgLogo = document.createElement("img");
     imgLogo.src = "https://coally.com/wp-content/uploads/2023/02/LOGO8-2.png";
     imgLogo.alt = "Logo";
     imgLogo.classList.add("img-fluid", "mb-3");
-    imgLogo.style.maxWidth = "250px";
+    imgLogo.style.maxWidth = "200px"; // Ajustar el tamaño de la imagen
     imgLogo.style.position = "relative";
     imgLogo.style.left = "3px";
 
     // Crear el formulario
     var form = document.createElement("form");
+
+    // Crear el campo de nombre de usuario
+    var divUsername = document.createElement("div");
+    divUsername.classList.add("form-outline", "form-white", "mb-3", "p-2");
+
+    var inputUsername = document.createElement("input");
+    inputUsername.type = "text";
+    inputUsername.classList.add("form-control");
+    inputUsername.id = "typeUsernameX";
+    inputUsername.placeholder = "Nombre de usuario";
+
+    divUsername.appendChild(inputUsername);
 
     // Crear el campo de correo electrónico
     var divEmail = document.createElement("div");
@@ -75,58 +85,50 @@ document.addEventListener("DOMContentLoaded", function () {
 
     divPassword.appendChild(inputPassword);
 
-    // Crear el enlace "¿Olvidaste la contraseña?"
-    var pForgotPassword = document.createElement("p");
-    pForgotPassword.classList.add("small", "mb-3");
+    // Crear el campo de confirmación de contraseña
+    var divConfirmPassword = document.createElement("div");
+    divConfirmPassword.classList.add("form-outline", "form-white", "mb-3", "p-2");
 
-    var aForgotPassword = document.createElement("a");
-    aForgotPassword.href = "#";
-    aForgotPassword.classList.add("text-white-50");
-    aForgotPassword.textContent = "¿Olvidaste la contraseña?";
+    var inputConfirmPassword = document.createElement("input");
+    inputConfirmPassword.type = "password";
+    inputConfirmPassword.classList.add("form-control");
+    inputConfirmPassword.id = "typeConfirmPasswordX";
+    inputConfirmPassword.placeholder = "Confirmar contraseña";
 
-    pForgotPassword.appendChild(aForgotPassword);
+    divConfirmPassword.appendChild(inputConfirmPassword);
 
-    // Crear el enlace "Ingresar"
+    // Crear el botón "Registrarse"
+    var aRegister = document.createElement("a");
+    aRegister.href = "success.html"; // Cambia este enlace según sea necesario
+    aRegister.classList.add("btn", "btn-outline-light", "btn-lg", "btn-block");
+    aRegister.textContent = "Registrarse";
+
+    // Crear el enlace "¿Ya tienes una cuenta? Inicia Sesión"
+    var divLogin = document.createElement("div");
+    divLogin.classList.add("mt-3");
+
+    var pLogin = document.createElement("p");
+    pLogin.classList.add("mb-0");
+
     var aLogin = document.createElement("a");
-    aLogin.href = "nomina.html";
-    aLogin.classList.add("btn", "btn-outline-light", "btn-lg", "btn-block");
-    aLogin.textContent = "Ingresar";
+    aLogin.href = "index.html";
+    aLogin.classList.add("text-white-50", "fw-bold");
+    aLogin.textContent = "¿Ya tienes una cuenta? Inicia Sesión";
 
-    // Crear el enlace "¿No tienes una cuenta? Regístrate"
-    var divSignUp = document.createElement("div");
-    divSignUp.classList.add("mt-3");
-
-    var pSignUp = document.createElement("p");
-    pSignUp.classList.add("mb-0");
-
-    var aSignUp = document.createElement("a");
-    aSignUp.href = "registrateEmpleado.html";
-    aSignUp.classList.add("text-white-50", "fw-bold");
-    aSignUp.textContent = "¿No tienes una cuenta? Regístrate";
-
-    // Crear el enlace para volver a la página principal con el icono de flecha
-var backButton = document.createElement("a");
-backButton.href = "index.html"; // Cambia "index.html" por la URL de tu página principal
-backButton.classList.add("btn", "btn-outline-light", "position-absolute", "top-0", "start-0", "m-3");
-backButton.innerHTML = '<i class="fas fa-arrow-left"></i>'; // Icono de flecha de Font Awesome
-
-// Agregar el enlace al cuerpo de la tarjeta
-divCardBody.appendChild(backButton);
-    
-
-    pSignUp.appendChild(aSignUp);
-    divSignUp.appendChild(pSignUp);
+    pLogin.appendChild(aLogin);
+    divLogin.appendChild(pLogin);
 
     // Agregar los elementos al cuerpo de la tarjeta
     divCardBody.appendChild(h2);
     divCardBody.appendChild(h3);
     divCardBody.appendChild(imgLogo);
     divCardBody.appendChild(form);
+    form.appendChild(divUsername);
     form.appendChild(divEmail);
     form.appendChild(divPassword);
-    form.appendChild(pForgotPassword);
-    form.appendChild(aLogin);
-    divCardBody.appendChild(divSignUp);
+    form.appendChild(divConfirmPassword);
+    form.appendChild(aRegister);
+    divCardBody.appendChild(divLogin);
 
     // Agregar el cuerpo de la tarjeta a la tarjeta
     divCard.appendChild(divCardBody);

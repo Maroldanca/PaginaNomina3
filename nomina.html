@@ -49,41 +49,65 @@
     </div>
 
   <script>
-    function generarPDF() {
-            const { jsPDF } = window.jspdf;
-            const doc = new jsPDF();
+   function generarPDF() {
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
 
-            const cesantias = document.querySelector('#resultado p:nth-child(1)').textContent;
-            const interesesCesantias = document.querySelector('#resultado p:nth-child(2)').textContent;
-            const prima = document.querySelector('#resultado p:nth-child(3)').textContent;
-            const diasVacaciones = document.querySelector('#resultado p:nth-child(4)').textContent;
-            const total = document.querySelector('#resultado p:nth-child(5)').textContent;
+    const cesantias = document.querySelector('#resultado p:nth-child(1)').textContent;
+    const interesesCesantias = document.querySelector('#resultado p:nth-child(2)').textContent;
+    const prima = document.querySelector('#resultado p:nth-child(3)').textContent;
+    const diasVacaciones = document.querySelector('#resultado p:nth-child(4)').textContent;
+    const total = document.querySelector('#resultado p:nth-child(5)').textContent;
 
-            // -----------------------------------------
+    // -----------------------------------------
 
-            doc.setFont("helvetica", "bold");
-            doc.setFontSize(18);
-            doc.setTextColor(40, 40, 40);
-            doc.text("Liquidación de Empleado", 20, 20);
+    // Encabezado más formal
+    doc.setFont("times", "bold");
+    doc.setFontSize(14);
+    doc.setTextColor(50, 50, 50);
+    doc.text("Liquidación de Empleado", 77, 30); // Ajusta las coordenadas según tus necesidades
 
-            doc.setFont("helvetica", "normal");
-            doc.setFontSize(12);
-            doc.setTextColor(50, 50, 50);
-            doc.text(cesantias, 20, 40);
-            doc.text(interesesCesantias, 20, 50);
-            doc.text(prima, 20, 60);
-            doc.text(diasVacaciones, 20, 70);
-            doc.text(total, 20, 80);
+    // Nombre del verificador de nómina
+    doc.setFont("times", "normal");
+    doc.setFontSize(12);
+    doc.text("Verificado por: Zully Vega", 80, 40); // Ajusta las coordenadas y el nombre según tus necesidades
 
-            // Opcional: Añadir un borde alrededor del texto
-            doc.setLineWidth(0.5);
-            doc.setDrawColor(100, 100, 100);
-            doc.rect(15, 15, 180, 70);
+    // Texto "CESDE" en negrita y grande con fuente Impact y color rosado
+    doc.setFont("Arial Black", "bold");
+    doc.setFontSize(30);
+    doc.setTextColor(255, 20, 147); // Color rosado
+    doc.text("CESDE", 25, 30); // Ajusta las coordenadas según tus necesidades
 
+    // Datos de la liquidación
+    doc.setFont("times", "normal");
+    doc.setFontSize(12);
+    doc.setTextColor(0, 0, 0); // Restablece el color a negro
+    doc.text(cesantias, 20, 60);
+    doc.text(interesesCesantias, 20, 70);
+    doc.text(prima, 20, 80);
+    doc.text(diasVacaciones, 20, 90);
+    doc.text(total, 20, 100);
 
-            doc.save('liquidacion.pdf');
-        }
-    
+    // Opcional: Añadir un borde alrededor del texto
+    doc.setLineWidth(0.5);
+    doc.setDrawColor(100, 100, 100);
+    doc.rect(15, 15, 180, 90);
+    doc.setFont("times", "normal");
+    doc.setFontSize(10);
+    doc.setTextColor(100, 100, 100);
+    doc.text("Innovación educativa para todos. Haz realidad tus sueños con CESDE.", 20, 130); // Ajusta las coordenadas y el texto según tus necesidades
+
+    // Texto adicional
+    const additionalText = "© 2024 CESDE. Todos los derechos reservados.";
+    doc.text(additionalText, 20, 140); // Ajusta las coordenadas y el texto según tus necesidades
+
+    // Línea decorativa
+    doc.setLineWidth(0.5);
+    doc.setDrawColor(100, 100, 100);
+    doc.line(20, 145, 190, 145); // Ajusta las coordenadas según tus necesidades
+
+    doc.save('liquidacion.pdf');
+}
   </script>
     
 

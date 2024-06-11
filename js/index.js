@@ -102,9 +102,9 @@ document.addEventListener("DOMContentLoaded", function () {
     var copyrightText = document.createTextNode("© 2020 Copyright:");
 
     var mdBootstrapLink = document.createElement("a");
-    mdBootstrapLink.href = "https://mdbootstrap.com/";
+    mdBootstrapLink.href = "https://www.cesde.edu.co/";
     mdBootstrapLink.classList.add("text-body");
-    mdBootstrapLink.textContent = "MDBootstrap.com";
+    mdBootstrapLink.textContent = " CESDE - Bello";
 
     copyrightDiv.appendChild(copyrightText);
     copyrightDiv.appendChild(mdBootstrapLink);
